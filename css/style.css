@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  /*COLORS*/
+
+  /*PRIMARY*/
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+
+  /*NEUTRAL*/
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+.body {
+  font-family: "Inter", sans-serif;
+}
+
+/* CREANDO EL MENÚ */
+.nav {
+  height: 80px;
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+
+  grid-template-columns: repeat(2, max-content);
+  grid-template-areas: "logo  icon";
+
+  grid-area: nav;
+}
+
+.container {
+  gap: 10px;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 60px;
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "main"
+    "sidebar"
+    "articles";
+}
+
+.nav__brand {
+  grid-area: logo;
+}
+
+.nav__hamburguer {
+  grid-area: icon;
+  z-index: 10; /*para sobreponerse al elemento*/
+}
+
+.nav__menu {
+  opacity: 0; /*Esto es para que no se vea el menú*/
+  pointer-events: none; /*esto es para poder usar el mouse*/
+
+  background-color: #fff;
+  position: absolute;
+  display: grid;
+  place-content: center;
+  inset: 0;
+
+  list-style: none;
+  padding: 0;
+  gap: 1em;
+}
+.nav__item {
+  text-align: center;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: var(--very-dark-blue);
+}
+
+.nav__icon {
+  width: 100%;
+}
+
+.nav__hamburguer--close {
+  display: none;
+}
+
+/* MAIN */
+.main {
+  display: grid;
+  grid-area: main;
+}
+
+.main__bg {
+  width: 100%;
+  height: 300px;
+  background-image: url(../assets/images/image-web-3-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.main__texts {
+  margin-top: 20px;
+}
+.main__title {
+  font-size: 2.5rem;
+  color: var(--very-dark-blue);
+
+  grid-area: titulo;
+}
+
+.main__paragraph {
+  line-height: 1.5;
+  color: var(--dark-grayish-blue);
+  margin: 1em 0;
+
+  grid-area: parrafo;
+}
+
+.main__cta {
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--soft-red);
+  color: #fff;
+  padding: 0.9em 2.5em;
+
+  grid-area: boton;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  background-color: var(--very-dark-blue);
+  color: #fff;
+  padding: 1.5em;
+
+  grid-area: sidebar;
+}
+
+.sidebar__article {
+  border-bottom: 1px solid var(--dark-grayish-blue);
+  padding-bottom: 1.5em;
+  margin-top: 1.5em;
+}
+
+.sidebar__article:last-of-type {
+  border: none;
+  /* margin: 0; */
+}
+
+.sidebar__title {
+  font-size: 2rem;
+  color: var(--soft-orange);
+
+  margin-bottom: 2rem;
+}
+
+.sidebar__link {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.sidebar__content {
+  line-height: 1.5;
+  color: var(--grayish-blue);
+}
+
+/* ARTICLES */
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 40px;
+
+  grid-area: articles;
+}
+
+.articles__article {
+  display: flex;
+  gap: 2px;
+}
+
+.articles__figure {
+  max-width: 140px;
+  width: 40%;
+  aspect-ratio: 3/4;
+}
+
+.articles__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.articles__number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--grayish-blue);
+}
+
+.articles__texts {
+  width: 60%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.articles__links {
+  text-decoration: none;
+  color: var(--very-dark-blue);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.articles__content {
+  line-height: 1.5;
+  color: var(--dark-grayish-blue);
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 764px) {
+  .container {
+    /* display: grid; */
+    gap: 30px;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+      "nav      nav      nav      nav      nav     "
+      "main     main     main     sidebar  sidebar "
+      "articles articles articles articles articles";
+  }
+
+  .main__bg {
+    background-image: url(../assets/images/image-web-3-desktop.jpg);
+  }
+
+  .main__texts {
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+      "titulo parrafo"
+      "titulo boton";
+  }
+
+  .main__title {
+    grid-area: titulo;
+    font-size: 2.9rem;
+  }
+
+  .main__paragraph {
+    grid-area: parrafo;
+  }
+
+  .main__cta {
+    grid-area: boton;
+    text-align: center;
+    align-self: end;
+  }
+}

@@ -14,9 +14,15 @@
 
     <title>Frontend Mentor | News homepage</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
+    <!-- <style>
       .attribution {
         font-size: 11px;
         text-align: center;
@@ -24,26 +30,153 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
-    </style>
+    </style> -->
   </head>
-  <body>
-    Home New Popular Trending Categories The Bright Future of Web 3.0? We dive
-    into the next evolution of the web that claims to put the power of the
-    platforms back into the hands of the people. But is it really fulfilling its
-    promise? Read more New Hydrogen VS Electric Cars Will hydrogen-fueled cars
-    ever catch up to EVs? The Downsides of AI Artistry What are the possible
-    adverse effects of on-demand AI image generation? Is VC Funding Drying Up?
-    Private funding by VC firms is down 50% YOY. We take a look at what that
-    means. 01 Reviving Retro PCs What happens when old PCs are given modern
-    upgrades? 02 Top 10 Laptops of 2022 Our best picks for various needs and
-    budgets. 03 The Growth of Gaming How the pandemic has sparked fresh
-    opportunities.
+  
+  <body class="body">
+    <div class="container">
+      <nav class="nav">
+        <figure class="nav__brand">
+          <img
+          class="nav__logo"
+          src="./assets/images/logo.svg"
+          alt="logo de la marca"
+          />
+        </figure>
+        
+        <ul class="nav__menu">
+         <li class="nav__item">
+           <a href="#" class="nav_link">Home</a>
+         </li>
+         <li class="nav__item">
+           <a href="#" class="nav_link">New</a>
+         </li>
+         <li class="nav__item">
+           <a href="#" class="nav_link">Popular</a>
+         </li>
+         <li class="nav__item">
+           <a href="#" class="nav_link">Trending</a>
+         </li>
+         <li class="nav__item">
+           <a href="#" class="nav_link">Categories</a>
+         </li>
+        </ul>
 
-    <div class="attribution">
+        <figure class="nav__hamburguer">
+          <img
+            src="./assets/images/icon-menu.svg"
+            alt="icono de abrir y cerrar"
+            class="nav__icon"
+          />
+        </figure>
+
+        <figure class="nav__hamburguer nav__hamburguer--close">
+          <img
+            src="./assets/images/icon-menu-close.svg"
+            alt="icono de abrir y cerrar"
+            class="nav__icon"
+          />
+        </figure>
+      </nav>
+
+      <main class="main">
+        <div class="main__bg"></div>
+
+        <article class="main__texts">
+          <h1 class="main__title">The Bright Future of Web 3.0?</h1>
+          <p class="main__paragraph">
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <a href="#" class="main__cta">Read more</a>
+        </article>
+      </main>
+
+      <aside class="sidebar">
+        <h2 class="sidebar__title">New</h2>
+        <article class="sidebar__article">
+          <a href="#" class="sidebar__link"> New Hydrogen VS Electric Cars </a>
+          <p class="sidebar__content">
+            Will hydrogen-fueled cars ever catch up to EVs?
+          </p>
+        </article>
+
+        <article class="sidebar__article">
+          <a href="#" class="sidebar__link"> The Downsides of AI Artistry </a>
+          <p class="sidebar__content">
+            What are the possible adverse effects of on-demand AI image
+            generation?
+          </p>
+        </article>
+
+        <article class="sidebar__article">
+          <a href="#" class="sidebar__link"> Is VC Funding Drying Up? </a>
+          <p class="sidebar__content">
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </p>
+        </article>
+      </aside>
+
+      <section class="articles">
+        <article class="articles__article">
+          <figure class="articles__figure">
+            <img
+              src="./assets/images/image-retro-pcs.jpg"
+              alt="retro pc"
+              class="articles__img"
+            />
+          </figure>
+          <div class="articles__texts">
+            <p class="articles__number">01</p>
+            <a href="#" class="articles__links">Reviving Retro PCs</a>
+            <p class="articles__content">What happens
+              when old PCs are given modern upgrades? </p>
+          </div>
+        </article>
+
+        <article class="articles__article">
+          <figure class="articles__figure">
+            <img
+              src="./assets/images/image-top-laptops.jpg"
+              alt="retro pc"
+              class="articles__img"
+            />
+          </figure>
+          <div class="articles__texts">
+            <p class="articles__number">02</p>
+            <a href="#" class="articles__links">Top 10 Laptops of 2022</a>
+            <p class="articles__content">Our best picks for various needs and budgets.</p>
+          </div>
+        </article>
+
+        <article class="articles__article">
+          <figure class="articles__figure">
+            <img
+              src="./assets/images/image-gaming-growth.jpg"
+              alt="retro pc"
+              class="articles__img"
+            />
+          </figure>
+          <div class="articles__texts">
+            <p class="articles__number">03</p>
+            <a href="#" class="articles__links">The Growth of Gaming</a>
+            <p class="articles__content">How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+
+
+    
+
+    <!-- <div class="attribution"> 
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
+      -->
     </div>
   </body>
 </html>
